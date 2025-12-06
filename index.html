@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Studio 001 - Agence de création de SaaS sur mesure. Transformez vos idées en solutions logicielles performantes.">
-    <title>Studio 001 | Agence de Création de SaaS</title>
+    <meta name="description" content="Studio 001 - Nous créons des SaaS exceptionnels qui transforment les industries.">
+    <title>Studio 001 — Exceptional SaaS Development</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,67 +16,76 @@
         }
 
         :root {
-            --primary: #0066FF;
-            --dark: #0A0E27;
-            --light: #F8F9FA;
-            --accent: #00D9FF;
-            --text: #333333;
-            --text-light: #666666;
+            --black: #000000;
+            --white: #FFFFFF;
+            --gray-50: #FAFAFA;
+            --gray-100: #F5F5F5;
+            --gray-200: #E5E5E5;
+            --gray-300: #D4D4D4;
+            --gray-400: #A3A3A3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--black);
             line-height: 1.6;
-            color: var(--text);
-            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Header & Navigation */
-        header {
+        /* Navigation */
+        nav {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--gray-200);
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
         }
 
-        nav {
-            max-width: 1200px;
+        .nav-container {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 1.5rem 2rem;
+            padding: 1.25rem 3rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--dark);
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: var(--primary);
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--black);
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text);
+            color: var(--gray-600);
+            font-size: 0.9375rem;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: color 0.2s ease;
         }
 
         .nav-links a:hover {
-            color: var(--primary);
+            color: var(--black);
         }
 
         /* Hero Section */
@@ -81,410 +93,696 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, var(--dark) 0%, #1a1f3a 100%);
-            color: white;
-            padding-top: 80px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 102, 255, 0.15) 0%, transparent 70%);
-            top: -200px;
-            right: -200px;
-            border-radius: 50%;
+            justify-content: center;
+            padding: 8rem 3rem 4rem;
+            background: var(--white);
         }
 
         .hero-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            position: relative;
-            z-index: 1;
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.375rem 0.875rem;
+            background: var(--gray-100);
+            border-radius: 100px;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            margin-bottom: 2rem;
+            letter-spacing: -0.01em;
         }
 
         .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
+            font-size: 5rem;
+            font-weight: 600;
+            letter-spacing: -0.04em;
             line-height: 1.1;
-            background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 1.5rem;
+            color: var(--black);
         }
 
         .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
-            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.25rem;
+            color: var(--gray-600);
             max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+            font-weight: 400;
         }
 
-        .cta-button {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: var(--primary);
-            color: white;
+        .cta-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn-primary {
+            padding: 0.875rem 2rem;
+            background: var(--black);
+            color: var(--white);
             text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(0, 102, 255, 0.3);
+            border-radius: 8px;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: 1px solid var(--black);
         }
 
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 102, 255, 0.4);
+        .btn-primary:hover {
+            background: var(--gray-800);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            padding: 0.875rem 2rem;
+            background: transparent;
+            color: var(--black);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: 1px solid var(--gray-300);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--black);
+        }
+
+        /* Clients Section */
+        .clients {
+            padding: 3rem 3rem 6rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .clients-label {
+            text-align: center;
+            font-size: 0.8125rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-500);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .clients-grid {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .client-logo {
+            text-align: center;
+            color: var(--gray-400);
+            font-size: 1.25rem;
+            font-weight: 600;
+            opacity: 0.6;
+            transition: opacity 0.2s ease;
+        }
+
+        .client-logo:hover {
+            opacity: 1;
         }
 
         /* Services Section */
         .services {
-            padding: 6rem 2rem;
-            background: var(--light);
+            padding: 8rem 3rem;
+            background: var(--gray-50);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .section-header {
+            max-width: 1400px;
+            margin: 0 auto 5rem;
+            text-align: center;
+        }
+
+        .section-label {
+            font-size: 0.8125rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-500);
+            margin-bottom: 1rem;
+            font-weight: 500;
         }
 
         .section-title {
-            text-align: center;
             font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-            color: var(--dark);
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            color: var(--black);
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
 
         .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1px;
+            background: var(--gray-200);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            overflow: hidden;
         }
 
         .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s, box-shadow 0.3s;
+            background: var(--white);
+            padding: 3rem;
+            transition: background 0.2s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+            background: var(--gray-50);
         }
 
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
+        .service-number {
+            font-size: 0.75rem;
+            color: var(--gray-400);
             margin-bottom: 1.5rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
         }
 
         .service-card h3 {
             font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
             margin-bottom: 1rem;
-            color: var(--dark);
+            color: var(--black);
         }
 
         .service-card p {
-            color: var(--text-light);
-            line-height: 1.8;
+            color: var(--gray-600);
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
         /* Process Section */
         .process {
-            padding: 6rem 2rem;
-            background: white;
+            padding: 8rem 3rem;
+            background: var(--white);
         }
 
-        .process-steps {
+        .process-grid {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 4rem;
         }
 
-        .step {
-            text-align: center;
-            padding: 2rem;
+        .process-step {
+            position: relative;
         }
 
         .step-number {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
+            font-size: 3rem;
             font-weight: 700;
-            margin: 0 auto 1.5rem;
+            color: var(--gray-200);
+            margin-bottom: 1.5rem;
+            line-height: 1;
+            letter-spacing: -0.03em;
         }
 
-        .step h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
+        .process-step h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+            color: var(--black);
         }
 
-        .step p {
-            color: var(--text-light);
+        .process-step p {
+            color: var(--gray-600);
+            font-size: 0.9375rem;
+            line-height: 1.6;
         }
 
-        /* Technologies Section */
-        .technologies {
-            padding: 6rem 2rem;
-            background: var(--dark);
-            color: white;
+        /* Tech Stack */
+        .tech-stack {
+            padding: 8rem 3rem;
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .tech-stack .section-label {
+            color: var(--gray-400);
+        }
+
+        .tech-stack .section-title {
+            color: var(--white);
+        }
+
+        .tech-stack .section-description {
+            color: var(--gray-400);
         }
 
         .tech-grid {
+            max-width: 1000px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
 
         .tech-item {
+            padding: 2rem 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
             text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            transition: all 0.3s;
+            transition: all 0.2s ease;
         }
 
         .tech-item:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
         }
 
         .tech-item h4 {
-            font-size: 1.1rem;
-            margin-top: 1rem;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--white);
+            letter-spacing: -0.01em;
         }
 
         /* CTA Section */
         .cta-section {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: white;
+            padding: 8rem 3rem;
+            background: var(--gray-50);
             text-align: center;
         }
 
-        .cta-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        .cta-section p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .cta-button-white {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: white;
-            color: var(--primary);
-            text-decoration: none;
-            border-radius: 50px;
+        .cta-content h2 {
+            font-size: 3rem;
             font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+            color: var(--black);
         }
 
-        .cta-button-white:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        .cta-content p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
         }
 
         /* Footer */
         footer {
-            background: var(--dark);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
+            padding: 4rem 3rem 3rem;
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
         }
 
-        footer p {
-            opacity: 0.7;
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .footer-brand {
+            max-width: 300px;
+        }
+
+        .footer-brand .logo {
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .footer-brand p {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+            line-height: 1.6;
+        }
+
+        .footer-column h4 {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+            color: var(--black);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-column a {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-column a:hover {
+            color: var(--black);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--gray-500);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--black);
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
+            .nav-container {
+                padding: 1.25rem 2rem;
+            }
+
+            .hero {
+                padding: 6rem 2rem 4rem;
+            }
+
             .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .nav-links {
-                display: none;
+                font-size: 3.5rem;
             }
 
             .section-title {
                 font-size: 2rem;
             }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
         }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.125rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content > * {
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .hero-badge { animation-delay: 0.1s; }
+        .hero h1 { animation-delay: 0.2s; }
+        .hero p { animation-delay: 0.3s; }
+        .cta-group { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">Studio <span>001</span></div>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">STUDIO 001</div>
             <ul class="nav-links">
-                <li><a href="#home">Accueil</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#process">Process</a></li>
-                <li><a href="#tech">Technologies</a></li>
+                <li><a href="#tech">Technology</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="hero-content">
-            <h1>Créateurs de SaaS<br>d'exception</h1>
-            <p>Nous transformons vos idées en solutions SaaS performantes et scalables. Du MVP à la mise à l'échelle, nous vous accompagnons à chaque étape.</p>
-            <a href="#contact" class="cta-button">Démarrer votre projet</a>
+            <div class="hero-badge">
+                <span>Agence SaaS Premium</span>
+            </div>
+            <h1>Nous créons des SaaS exceptionnels</h1>
+            <p>De l'idée au produit scalable. Nous accompagnons les entreprises ambitieuses dans la création de solutions logicielles qui transforment leur industrie.</p>
+            <div class="cta-group">
+                <a href="#contact" class="btn-primary">Démarrer un projet</a>
+                <a href="#services" class="btn-secondary">Nos services</a>
+            </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Clients -->
+    <section class="clients">
+        <div class="clients-label">Ils nous font confiance</div>
+        <div class="clients-grid">
+            <div class="client-logo">ACME</div>
+            <div class="client-logo">VERTEX</div>
+            <div class="client-logo">NEXUS</div>
+            <div class="client-logo">APEX</div>
+            <div class="client-logo">ZENITH</div>
+        </div>
+    </section>
+
+    <!-- Services -->
     <section class="services" id="services">
-        <div class="container">
-            <h2 class="section-title">Nos Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🚀</div>
-                    <h3>Développement MVP</h3>
-                    <p>Validez rapidement votre idée avec un Minimum Viable Product conçu pour tester le marché et séduire vos premiers utilisateurs.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>SaaS Sur Mesure</h3>
-                    <p>Développement complet de votre plateforme SaaS avec une architecture scalable et des fonctionnalités adaptées à vos besoins.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📈</div>
-                    <h3>Scaling & Optimisation</h3>
-                    <p>Faites évoluer votre SaaS pour supporter des milliers d'utilisateurs avec des performances optimales.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎨</div>
-                    <h3>Design UI/UX</h3>
-                    <p>Interfaces modernes et intuitives conçues pour maximiser l'engagement et la satisfaction de vos utilisateurs.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔒</div>
-                    <h3>Sécurité & Conformité</h3>
-                    <p>Protection de vos données et conformité RGPD intégrées dès la conception de votre SaaS.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3>Maintenance & Support</h3>
-                    <p>Accompagnement continu avec maintenance proactive et support technique pour garantir la pérennité de votre SaaS.</p>
-                </div>
+        <div class="section-header">
+            <div class="section-label">Services</div>
+            <h2 class="section-title">Ce que nous faisons</h2>
+            <p class="section-description">Expertise complète pour transformer votre vision en produit à succès</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-number">01</div>
+                <h3>Stratégie Produit</h3>
+                <p>Définition de la vision, roadmap produit et validation du market fit pour maximiser vos chances de succès.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-number">02</div>
+                <h3>Design & UX</h3>
+                <p>Interfaces élégantes et intuitives pensées pour l'engagement et la conversion de vos utilisateurs.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-number">03</div>
+                <h3>Développement</h3>
+                <p>Architecture scalable, code de qualité production et intégrations techniques complexes.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-number">04</div>
+                <h3>MVP Rapide</h3>
+                <p>Validation rapide de votre concept avec un produit fonctionnel livré en quelques semaines.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-number">05</div>
+                <h3>Scale & Croissance</h3>
+                <p>Optimisation des performances, infrastructure cloud et accompagnement technique pour votre croissance.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-number">06</div>
+                <h3>Support Continu</h3>
+                <p>Maintenance évolutive, monitoring et améliorations continues de votre plateforme.</p>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
+    <!-- Process -->
     <section class="process" id="process">
-        <div class="container">
-            <h2 class="section-title">Notre Processus</h2>
-            <div class="process-steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Découverte</h3>
-                    <p>Analyse approfondie de vos besoins et définition de la vision de votre SaaS.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Conception</h3>
-                    <p>Architecture technique et design UI/UX pour une expérience utilisateur optimale.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Développement</h3>
-                    <p>Code de qualité avec méthodologie agile et livraisons itératives.</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Lancement</h3>
-                    <p>Déploiement, tests finaux et mise en production de votre SaaS.</p>
-                </div>
+        <div class="section-header">
+            <div class="section-label">Process</div>
+            <h2 class="section-title">Notre approche</h2>
+            <p class="section-description">Méthodologie éprouvée pour des résultats prévisibles</p>
+        </div>
+        <div class="process-grid">
+            <div class="process-step">
+                <div class="step-number">01</div>
+                <h3>Discovery</h3>
+                <p>Immersion dans votre vision, analyse du marché et définition des objectifs stratégiques.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">02</div>
+                <h3>Design</h3>
+                <p>Wireframes, prototypes interactifs et design system pour une expérience cohérente.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">03</div>
+                <h3>Build</h3>
+                <p>Développement agile avec revues hebdomadaires et déploiements continus.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">04</div>
+                <h3>Launch</h3>
+                <p>Mise en production, formation de vos équipes et accompagnement post-lancement.</p>
             </div>
         </div>
     </section>
 
-    <!-- Technologies Section -->
-    <section class="technologies" id="tech">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">Technologies Maîtrisées</h2>
-            <div class="tech-grid">
-                <div class="tech-item">
-                    <h4>React / Next.js</h4>
-                </div>
-                <div class="tech-item">
-                    <h4>Node.js</h4>
-                </div>
-                <div class="tech-item">
-                    <h4>TypeScript</h4>
-                </div>
-                <div class="tech-item">
-                    <h4>PostgreSQL</h4>
-                </div>
-                <div class="tech-item">
-                    <h4>AWS / GCP</h4>
-                </div>
-                <div class="tech-item">
-                    <h4>Docker</h4>
-                </div>
-                <div class="tech-item">
-                    <h4>Stripe</h4>
-                </div>
-                <div class="tech-item">
-                    <h4>GraphQL</h4>
-                </div>
-            </div>
+    <!-- Tech Stack -->
+    <section class="tech-stack" id="tech">
+        <div class="section-header">
+            <div class="section-label">Technology</div>
+            <h2 class="section-title">Stack moderne</h2>
+            <p class="section-description">Les technologies qui alimentent les meilleurs produits du monde</p>
+        </div>
+        <div class="tech-grid">
+            <div class="tech-item"><h4>React</h4></div>
+            <div class="tech-item"><h4>Next.js</h4></div>
+            <div class="tech-item"><h4>TypeScript</h4></div>
+            <div class="tech-item"><h4>Node.js</h4></div>
+            <div class="tech-item"><h4>PostgreSQL</h4></div>
+            <div class="tech-item"><h4>Prisma</h4></div>
+            <div class="tech-item"><h4>AWS</h4></div>
+            <div class="tech-item"><h4>Vercel</h4></div>
+            <div class="tech-item"><h4>Docker</h4></div>
+            <div class="tech-item"><h4>Kubernetes</h4></div>
+            <div class="tech-item"><h4>Stripe</h4></div>
+            <div class="tech-item"><h4>GraphQL</h4></div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- CTA -->
     <section class="cta-section" id="contact">
-        <div class="container">
-            <h2>Prêt à lancer votre SaaS ?</h2>
-            <p>Discutons de votre projet et transformons votre vision en réalité.</p>
-            <a href="mailto:contact@studio001.com" class="cta-button-white">Nous Contacter</a>
+        <div class="cta-content">
+            <h2>Transformons votre vision en réalité</h2>
+            <p>Discutons de votre projet et créons ensemble quelque chose d'exceptionnel.</p>
+            <a href="mailto:hello@studio001.co" class="btn-primary">Commencer la conversation</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Studio 001. Tous droits réservés.</p>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">STUDIO 001</div>
+                <p>Agence de développement SaaS pour entreprises ambitieuses. Paris, France.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Stratégie Produit</a></li>
+                    <li><a href="#services">Design & UX</a></li>
+                    <li><a href="#services">Développement</a></li>
+                    <li><a href="#services">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Entreprise</h4>
+                <ul>
+                    <li><a href="#process">Notre Process</a></li>
+                    <li><a href="#tech">Technologies</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="mailto:hello@studio001.co">hello@studio001.co</a></li>
+                    <li><a href="tel:+33000000000">+33 0 00 00 00 00</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; 2024 Studio 001. Tous droits réservés.</div>
+            <div class="footer-links">
+                <a href="#">Mentions légales</a>
+                <a href="#">Confidentialité</a>
+            </div>
         </div>
     </footer>
 </body>
